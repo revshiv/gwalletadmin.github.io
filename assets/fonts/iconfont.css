@@ -1,0 +1,21 @@
+@font-face {
+	font-family: "iconfont";
+	src: url("iconfont.eot?8d5efd1621b5a95f28f410dcfedcaca8?#iefix") format("embedded-opentype"),
+url("iconfont.woff2?8d5efd1621b5a95f28f410dcfedcaca8") format("woff2"),
+url("iconfont.woff?8d5efd1621b5a95f28f410dcfedcaca8") format("woff");
+}
+
+.icon {
+	line-height: 1;
+}
+
+.icon:before {
+	font-family: iconfont !important;
+	font-style: normal;
+	font-weight: normal !important;
+	vertical-align: top;
+}
+
+.icon-password:before {
+	content: "\f101";
+}

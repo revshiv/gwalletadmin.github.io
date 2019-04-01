@@ -1,1 +1,128 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="shortcut icon" href="/favicons/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"/><meta name="theme-color" content="#000000"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.2/build/css/alertify.min.css"/><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.2/build/css/themes/semantic.min.css"/><link rel="manifest" href="/manifest.json"/><title>Gwallet Admin</title><link href="/static/css/main.12422099.chunk.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script>!function(l){function e(e){for(var r,t,n=e[0],o=e[1],u=e[2],f=0,i=[];f<n.length;f++)t=n[f],p[t]&&i.push(p[t][0]),p[t]=0;for(r in o)Object.prototype.hasOwnProperty.call(o,r)&&(l[r]=o[r]);for(s&&s(e);i.length;)i.shift()();return c.push.apply(c,u||[]),a()}function a(){for(var e,r=0;r<c.length;r++){for(var t=c[r],n=!0,o=1;o<t.length;o++){var u=t[o];0!==p[u]&&(n=!1)}n&&(c.splice(r--,1),e=f(f.s=t[0]))}return e}var t={},p={1:0},c=[];function f(e){if(t[e])return t[e].exports;var r=t[e]={i:e,l:!1,exports:{}};return l[e].call(r.exports,r,r.exports,f),r.l=!0,r.exports}f.m=l,f.c=t,f.d=function(e,r,t){f.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},f.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},f.t=function(r,e){if(1&e&&(r=f(r)),8&e)return r;if(4&e&&"object"==typeof r&&r&&r.__esModule)return r;var t=Object.create(null);if(f.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:r}),2&e&&"string"!=typeof r)for(var n in r)f.d(t,n,function(e){return r[e]}.bind(null,n));return t},f.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return f.d(r,"a",r),r},f.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},f.p="/";var r=window.webpackJsonp=window.webpackJsonp||[],n=r.push.bind(r);r.push=e,r=r.slice();for(var o=0;o<r.length;o++)e(r[o]);var s=n;a()}([])</script><script src="/static/js/2.3bcdc0cc.chunk.js"></script><script src="/static/js/main.0690fa18.chunk.js"></script></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>An Upcoming Exchange Platform</title><base href="/"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png"><link rel="apple-touch-icon" sizes="152x152" href="assets/icons/apple-touch-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png"><link rel="apple-touch-icon" sizes="167x167" href="assets/icons/apple-touch-icon.png"><meta name="apple-mobile-web-app-title" content=""><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" type="image/png" href="assets/icons/favicon.png" sizes="32x32"><link rel="icon" type="image/png" href="assets/icons/favicon.png" sizes="16x16"><link rel="manifest" href="/manifest.json"><link rel="mask-icon" href="assets/icons/apple-touch-icon.png" color="#5bbad5"><link rel="shortcut icon" href="assets/icons/favicon.ico"><meta name="msapplication-config" content="assets/icons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link href="styles.a7c0ee60cfcd1f57a567.bundle.css" rel="stylesheet"/></head><body oncontextmenu="return false;"><app-root><div id="loadingMsg"></div><div class="sidebar-overlay"></div></app-root><script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script><script type="text/javascript" src="https://s3.tradingview.com/tv.js" async></script><script>//for warning
+  $(window).load(function () {
+    if (window.location.pathname == '/home') {
+      $('#warningBtn').click();
+    }
+  });
+  document.onkeydown = function (e) {
+
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+      return false;
+    }
+    // if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+    //   return false;
+    // }
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+      return false;
+    }
+    if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+      return false;
+    }
+  }</script><noscript>Your Browser Doesn't support Javavscript.</noscript><script>if ('serviceWorker' in navigator && 'PushManager' in window) {
+    console.log('Service Worker and Push is supported');
+
+    navigator.serviceWorker.register('./service-worker.js')
+      .then(function (swReg) {
+        console.log('Service Worker is registered', swReg);
+        swRegistration = swReg;
+        swReg.update();
+      })
+      .catch(function (error) {
+        console.error('Service Worker Error', error);
+      });
+  } else {
+    console.warn('Push messaging is not supported');
+    console.log('Push Not Supported');
+  }
+  //
+
+
+  //
+  function initialiseUI() {
+    swRegistration.pushManager.getSubscription()
+      .then(function (subscription) {
+        localStorage.setItem('messagingId', JSON.stringify(subscription));
+        isSubscribed = !(subscription === null);
+
+        if (isSubscribed) {
+        } else {
+          subscribeUser();
+        }
+      });
+  }
+
+  //
+  function subscribeUser() {
+    const applicationServerKey = urlB64ToUint8Array("BCOy8YVNB9h0J0leynA_qbqOjmooIk_HxIwEKkxECI_q73THufnvRaSMUmtieR3vSdKrMVKrLg7BdbEmltqKePA=");
+    swRegistration.pushManager.subscribe({
+      userVisibleOnly: true,
+      applicationServerKey: applicationServerKey
+    })
+      .then(function (subscription) {
+        localStorage.setItem('messagingId', JSON.stringify(subscription));
+//          userService.getUsers().subscribe( function(response) {
+//
+//          },function(error){
+//
+//        }
+
+
+        updateSubscriptionOnServer(subscription);
+
+        self.addEventListener('pushsubscriptionchange', function (event) {
+          event.waitUntil(
+            self.registration.pushManager.subscribe({
+              userVisibleOnly: true,
+              applicationServerKey: applicationServerKey
+            }).then(function (newSubscription) {
+              /* TODO: Send the subscription object to application server.
+               *       notifications are sent from the server using this object.
+               */
+            })
+          );
+        });
+        isSubscribed = true;
+
+      })
+      .catch(function (err) {
+      });
+  }
+
+  //
+  function updateSubscriptionOnServer(subscription) {
+    // TODO: Send subscription to application server
+    //      const subscriptionJson = document.querySelector('.js-subscription-json');
+    //      const subscriptionDetails =
+    //        document.querySelector('.js-subscription-details');
+    //
+    //      if (subscription) {
+    //        subscriptionJson.textContent = JSON.stringify(subscription);
+    //        subscriptionDetails.classList.remove('is-invisible');
+    //      } else {
+    //        subscriptionDetails.classList.add('is-invisible');
+    //      }
+  }
+
+  //
+  function urlB64ToUint8Array(base64String) {
+    const padding = '='.repeat((4 - base64String.length % 4) % 4);
+    const base64 = (base64String + padding)
+      .replace(/\-/g, '+')
+      .replace(/_/g, '/');
+
+    const rawData = window.atob(base64);
+    const outputArray = new Uint8Array(rawData.length);
+
+    for (var i = 0; i < rawData.length; ++i) {
+      outputArray[i] = rawData.charCodeAt(i);
+    }
+    return outputArray;
+  }</script><script>const language = localStorage.getItem('selectedLanguage')
+
+  if (language == 'en') {
+    document.getElementById('loadingMsg').innerHTML = '<div class="loader loader-default is-active" style="background:#1b4753e3 !important" data-text="Loading MastBit. Please Wait!" data-blink id="siteLoader"></div>'
+  } else if (language == 'hi') {
+    document.getElementById('loadingMsg').innerHTML = '<div class="loader loader-default is-active" style="background:#1b4753e3 !important" data-text="कृपया प्रतीक्षा करें, लोड हो रहा है." data-blink id="siteLoader"></div>'
+  } else {
+    document.getElementById('loadingMsg').innerHTML = '<div class="loader loader-default is-active" style="background:#1b4753e3 !important" data-text="Loading MastBit. Please Wait!" data-blink id="siteLoader"></div>'
+  }</script><script type="text/javascript" src="inline.f1878ba70cc711f4c207.bundle.js"></script><script type="text/javascript" src="polyfills.b907b64e0434587fd5c6.bundle.js"></script><script type="text/javascript" src="scripts.66361e80eab100bc0e7f.bundle.js"></script><script type="text/javascript" src="main.7d1ed7c4e2ea1cd80d07.bundle.js"></script></body></html>
